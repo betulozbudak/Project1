@@ -1,0 +1,5 @@
+//class name          variable  newinstance
+PrimitiveDataTypeDemo p1= new PrimitiveDataTypeDemo();
+
+p1.printBasicDataType();
+p1.printBasicDataType2();
