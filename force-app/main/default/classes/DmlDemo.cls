@@ -86,7 +86,7 @@ public class DmlDemo {
         }
     }
 
-    public static void       dmlMultipleRecordUpdate_right(){
+    public static void dmlMultipleRecordUpdate_right(){
         List<account> listAcc=[select id, name from account];
         List<account> updateAccount = new list<account>();
         for(account acc: listAcc){
@@ -94,13 +94,14 @@ public class DmlDemo {
                 acc.name = acc.name + 'via B.0';
                 updateAccount.add(acc);
             }
-  
         }
 
-           if(!updateAccount.isEmpty()){
+        if(!updateAccount.isEmpty()){
                 update updateAccount;
            }
     }
 }
+
+
 
 

@@ -9,3 +9,4 @@ DmlDemo.dmlInsertMultiple_right2();
 DmlDemo.dmlMultipleRecordUpdate_right();
 
 
+delete [select id from account where createddate = THIS_WEEK];
