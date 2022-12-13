@@ -1,6 +1,47 @@
 trigger AccountTrigger on Account (before insert, before update, after insert, after update) {
+    if(trigger.isBefore){
+        AccountTriggerHandler.updateDescription(Trigger.New, Trigger.Old,Trigger.NewMap,Trigger.OldMap);
+    }
 
-
+    /*if(trigger.isBefore){
+        
+        //system.debug('Before insert/update trigger on Account object');
+        for(Account eachAcc: Trigger.new){
+            boolean updateDesc = false;
+            if(trigger.isInsert && eachAcc.active__c=='Yes'){
+                UpdateDesc = true;
+            }
+            if(trigger.isUpdate){
+               
+                Account oldAccount= Trigger.oldMap.get(eachAcc.Id);
+                Account newAccount = Trigger.NewMap.get(eachAcc.Id);
+                if(eachAcc.active__c=='Yes' && oldAccount.Active__c != newAccount.Active__c){
+                    updateDesc = true;
+                }
+            }
+            if(updateDesc){
+                eachAcc.Description = 'Account is now active.Enjoy buddy!';
+            }
+        }
+    }
+    /*if(trigger.isBefore){
+        
+        //system.debug('Before insert/update trigger on Account object');
+        for(Account eachAcc: Trigger.new){
+            if(trigger.isInsert && eachAcc.active__c=='Yes'){
+                eachAcc.Description ='Account is not active.Enjoy!';
+            }
+            if(trigger.isUpdate){
+               
+                Account oldAccount= Trigger.oldMap.get(eachAcc.Id);
+                Account newAccount = Trigger.NewMap.get(eachAcc.Id);
+                if(eachAcc.active__c=='Yes' && oldAccount.Active__c != newAccount.Active__c){
+                    eachAcc.Description = 'Account is NOW ACTIVE.You must Enjoy!';
+                }
+            }
+        }
+    }
+*/
 /*    list<account> accTriggerNew = trigger.new;
 
     if(trigger.isBefore && trigger.isInsert){
@@ -183,7 +224,7 @@ trigger AccountTrigger on Account (before insert, before update, after insert, a
         }
     }*/
 
-    if (trigger.isAfter && trigger.isUpdate) {
+   /* if (trigger.isAfter && trigger.isUpdate) {
         system.debug('after update trigger');
 
         map<id, account> accTriggerOldMap = trigger.oldMap; //map of old records, id is key
@@ -207,7 +248,9 @@ trigger AccountTrigger on Account (before insert, before update, after insert, a
             }
         }
         system.debug('count website' + countwebsite);
-} 
+} */
+
+
 }   
     
     
