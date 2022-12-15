@@ -8,5 +8,12 @@ public class ContactTriggerHandler {
             }
          }
     }
-    public static void contactUpdateValidation2()
+    public static void contactUpdateValidation2(list<contact> cntTriggerNew,list<contact> cntTriggerOld, Map<id, contact> cntTriggerNewMap,Map<id,contact> cntTriggerOldMap){
+        for(contact eachContact : cntTriggerNew){
+            contact oldContact = cntTriggerOldMap.get(eachContact.Id);
+            if(eachContact.LeadSource != oldContact.LeadSource){
+                eachContact.LeadSource.addError('Cannot update Lead Source');
+            }
+        }
+    }
 }
