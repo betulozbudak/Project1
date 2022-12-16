@@ -50,7 +50,6 @@ public class AccountTriggerHandler {
                     id contactAccId = eachCon.AccountId;
                     Account newAcc = accTriggerNewMap.get(contactAccId);
                     boolean accVIP = newAcc.vip__c;
-
                     boolean accVIP2 = accTriggerNewMap.get(eachCon.AccountId).vip__c;
                     eachCon.vip__c = accVIP;
                 }
@@ -59,3 +58,4 @@ public class AccountTriggerHandler {
          }
     }
 }
+
