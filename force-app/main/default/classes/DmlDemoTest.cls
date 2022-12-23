@@ -21,6 +21,18 @@ public class DmlDemoTest {
             list<contact> listContact =[select id,lastname from contact where lastname ='Biden'];
             system.assertEquals('Biden', listContact[0].LastName);
          }
-        
+     @isTest
+         public static void dmlInsert5Test(){
+          //prepare data
+            Salesforce_Project__c sp = new Salesforce_Project__c();
+            sp.Project_Name__c ='Test SP';
+            sp.Status__c ='New';
+            insert sp;
+            DmlDemo.dmlUpdateDemo_5();
+            //verify if ticket is INSERTED
+            //soql to get ticket records.
+            List<Salesforce_Ticket__c> listST=[select id, name, subject__c, Salesforce_Project__c from Salesforce_Ticket__c where Salesforce_Project__c =: sp.id and subject__c ='Learn Apex dmls'];
+            system.assertEquals('Learn Apex dmls',listST[0].Subject__c);
+         }
     }
 
