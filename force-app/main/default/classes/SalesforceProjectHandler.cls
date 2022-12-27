@@ -1,7 +1,7 @@
 public class SalesforceProjectHandler {
-    /*public static void createDefaultTicket(list<Salesforce_Project__c> spTriggerNew){
+    public static void createDefaultTicket(list<Salesforce_Project__c> spTriggerNew){
         List<Salesforce_Ticket__c> newList = new List<Salesforce_Ticket__c>();
-        for(Salesforce_Project__c eachSP : ProTriggerNew){
+        for(Salesforce_Project__c eachSP : SpTriggerNew){
             Salesforce_Ticket__c newST = new Salesforce_Ticket__c();
             newST.Subject__c ='Default Ticket';
             newST.Salesforce_Project__c=eachSP.Id;
@@ -10,7 +10,7 @@ public class SalesforceProjectHandler {
                 insert newList;
             }
         }
-    }*/
+    }
     public static void completeSPvalidation(list<Salesforce_Project__c> spTriggerNew,list<Salesforce_Project__c> spTriggerOld,map<id,Salesforce_Project__c> spTriggerNewMap,map<id,Salesforce_Project__c> spTriggerOldMap){
         set<id> spCompletedIds = new set<id>();
         for(Salesforce_Project__c eachSP : spTriggerNew){
