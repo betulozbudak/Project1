@@ -7,12 +7,15 @@ trigger SalesforceProjectTrigger on Salesforce_Project__c (before insert,after i
         system.debug('callling future methode NOW');
         map<id,Salesforce_Project__c> spNewMap =trigger.newMap;
         set<id> spIds = spNewMap.keyset();
-        SalesforceProjectHandler.spUpdateDescription(spNewMap.keyset());
+        SPTriggerHandler.spUpdateDescription(spNewMap.keyset());
         system.debug('called future method.DONE.');
     }
-/*    if(Trigger.isBefore&& Trigger.isUpdate){
+/* if(Trigger.isBefore&& Trigger.isUpdate){
         //call validation
         SalesforceProjectHandler.completeSPvalidation(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
     }
 */
+    if(Trigger.isAfter && Trigger.isUpdate){
+        SPTriggerHandler.spStatusCompleted(trigger.new,trigger.old,trigger.newMap,trigger.oldMap);
+    }
 }

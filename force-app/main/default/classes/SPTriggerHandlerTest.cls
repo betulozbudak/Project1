@@ -15,7 +15,7 @@ public class SPTriggerHandlerTest {
         set<id> setSPId =new set<id>{sp1.Id,sp2.Id};
 
         Test.startTest();
-        SalesforceProjectHandler.spUpdateDescription(setSPId);
+        SPTriggerHandler.spUpdateDescription(setSPId);
         Test.stopTest();
 
         List<Salesforce_Project__c> allSP= [select id, description__c from Salesforce_Project__c];
