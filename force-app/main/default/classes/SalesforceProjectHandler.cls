@@ -1,5 +1,5 @@
 public class SalesforceProjectHandler {
-    public static void createDefaultTicket(list<Salesforce_Project__c> spTriggerNew){
+    /*public static void createDefaultTicket(list<Salesforce_Project__c> spTriggerNew){
         List<Salesforce_Ticket__c> newList = new List<Salesforce_Ticket__c>();
         for(Salesforce_Project__c eachSP : SpTriggerNew){
             Salesforce_Ticket__c newST = new Salesforce_Ticket__c();
@@ -26,5 +26,7 @@ public class SalesforceProjectHandler {
             spNew.addError('Cannot complete project because all tickets are not completed.Go away');
             }
         }
+    */
+        
     }
 

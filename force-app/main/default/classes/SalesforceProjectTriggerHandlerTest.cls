@@ -1,6 +1,18 @@
 @isTest
 public class SalesforceProjectTriggerHandlerTest {
-    @isTest 
+      
+
+
+
+
+
+
+
+
+
+
+
+    /*@isTest 
        public static void testmethod1(){
         Salesforce_Project__c testProject1 = new Salesforce_Project__c();
         testProject1.Project_Name__c='Project1';
@@ -36,7 +48,7 @@ public class SalesforceProjectTriggerHandlerTest {
         list<Salesforce_Project__c> listP =[select Id, Project_Name__c, Status__c from Salesforce_Project__c where Status__c ='New'];
         system.assertEquals(1,listP.size());
 
-}
+}*/
 }
 
 
