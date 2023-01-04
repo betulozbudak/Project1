@@ -1,7 +1,7 @@
 trigger SalesforceProjectTrigger on Salesforce_Project__c (before insert,after insert,before update,after update) {
     if(trigger.isAfter && Trigger.isInsert){
-        //call trigger handler to CREATE ticket
-        //SalesforceProjectHandler.createDefaultTicket(Trigger.New);
+        
+        SalesforceProjectHandler.createDefaultTicket(Trigger.New);
 
         //call future method
         system.debug('callling future methode NOW');
@@ -10,12 +10,13 @@ trigger SalesforceProjectTrigger on Salesforce_Project__c (before insert,after i
         SPTriggerHandler.spUpdateDescription(spNewMap.keyset());
         system.debug('called future method.DONE.');
     }
-/* if(Trigger.isBefore&& Trigger.isUpdate){
+if(Trigger.isBefore&& Trigger.isUpdate){
         //call validation
         SalesforceProjectHandler.completeSPvalidation(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
     }
-*/
+
     if(Trigger.isAfter && Trigger.isUpdate){
         SPTriggerHandler.spStatusCompleted(trigger.new,trigger.old,trigger.newMap,trigger.oldMap);
     }
 }
+

@@ -1,17 +1,6 @@
 @isTest
 public class SalesforceProjectTriggerHandlerTest {
       
-
-
-
-
-
-
-
-
-
-
-
     /*@isTest 
        public static void testmethod1(){
         Salesforce_Project__c testProject1 = new Salesforce_Project__c();

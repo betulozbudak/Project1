@@ -3,7 +3,7 @@ trigger ContactTrigger on Contact (before insert, after insert, before update, a
         
     
        
-/*if (Trigger.isBefore) {
+if (Trigger.isBefore) {
     
     if (Trigger.isUpdate) {
         system.debug('we are in before update trigger.');
@@ -12,9 +12,9 @@ trigger ContactTrigger on Contact (before insert, after insert, before update, a
     }
 }
 
-}
+/*
 
-/*  //I want to print when we are in BEFORE
+//I want to print when we are in BEFORE
     if (Trigger.isBefore) {
         system.debug('We are in BEFORE. Not Saved');
         if (Trigger.isInsert) {

@@ -1,6 +1,6 @@
 public class ContactTriggerHandler {
     
-      /*public static void contactUpdateValidation1(list<contact> conTriggerNew, list<contact> conTriggerOld,map<id,contact> conTriggerNewMap,map<id,contact> conTriggerOldMap) {
+    public static void contactUpdateValidation1(list<contact> conTriggerNew, list<contact> conTriggerOld,map<id,contact> conTriggerNewMap,map<id,contact> conTriggerOldMap) {
          //Validation
          for(contact eachContact : conTriggerNew){
             contact oldContact =conTriggerOldMap.get(eachContact.Id);
@@ -13,9 +13,10 @@ public class ContactTriggerHandler {
         for(contact eachContact : cntTriggerNew){
             contact oldContact = cntTriggerOldMap.get(eachContact.Id);
             if(eachContact.LeadSource != oldContact.LeadSource){
-                eachContact.LeadSource.addError('Cannot update Lead Source');
+                string customError = system.label.ContactValidation2;
+                eachContact.LeadSource.addError(customError);
             }
         }
-    }*/
+    }
     
 }
