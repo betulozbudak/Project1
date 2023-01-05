@@ -1,4 +1,10 @@
 trigger AccountTrigger on Account (before insert, before update, after insert, after update) {
+    if(Trigger.isAfter && Trigger.isInsert){
+        AccountTriggerHandler.accountCreateContact(trigger.new);
+      }
+    
+    
+    
     /*if (Trigger.isAfter && Trigger.isInsert) {
         AccountQueueableExample aq = new AccountQueueableExample(trigger.new);
         id jobId = system.enqueueJob(aq);

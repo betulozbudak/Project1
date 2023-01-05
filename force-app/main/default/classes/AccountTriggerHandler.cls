@@ -1,7 +1,7 @@
 public class AccountTriggerHandler {
 
         
-        /*public static void updateDescription(List<Account> accTriggerNew, List<account> accTriggerOld,
+        public static void updateDescription(List<Account> accTriggerNew, List<account> accTriggerOld,
                                 Map<id, account> accTriggerNewMap, Map<id, account> accTriggerOldMap) {
         for (account eachAcc : accTriggerNew) {
             boolean updateDesc = false;
@@ -58,6 +58,17 @@ public class AccountTriggerHandler {
                 
                 update allContacts;
          }
-    }*/
+    }
+
+    public static void accountCreateContact(list<account> triggerNew) {
+        list<contact> listCon= new list<contact>();
+        for(account acc : triggerNew){
+            contact c = new contact();
+            c.AccountId = acc.id;
+            c.LastName = acc.Name;
+            c.Phone =acc.Phone;
+            listCon.add(c);
+        }
+    insert listCon;
 }
 
