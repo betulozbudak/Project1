@@ -2,12 +2,15 @@ public class SalesforceProjectHandler {
     public static void createDefaultTicket(List<salesforce_project__c> spTriggerNew) {
         try{
         List<Salesforce_Ticket__c>  listST = new List<Salesforce_Ticket__c>();
+        
+        DefaultTicketInfo__c defaultValues = DefaultTicketInfo__c.getOrgDefaults();
 
         for (salesforce_project__c eachSP : spTriggerNew) {
             Salesforce_Ticket__c newST = new Salesforce_Ticket__c();
-            newST.Subject__c = 'Default ticket';
+            newST.Subject__c = defaultValues.Subject__c;
+            newST.Description__c=defaultValues.Description__c;
             newST.Salesforce_Project__c = eachSP.Id;
-            //newST.Priority__c = 'Medium';
+            newST.Priority__c = 'Medium';
             listST.add(newST);
         }
         if (!listST.isEmpty()) {
@@ -95,3 +98,4 @@ public class SalesforceProjectHandler {
         //update tickets.
     }
 }
+
